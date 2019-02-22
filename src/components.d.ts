@@ -12,45 +12,54 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface MyDropdown {
+    'title': string;
+  }
+  interface MyDropdownAttributes extends StencilHTMLAttributes {
+    'onOnToggle'?: (event: CustomEvent) => void;
+    'title'?: string;
+  }
+
   interface MyComponent {
-    /**
-    * The first name
-    */
     'first': string;
-    /**
-    * The last name
-    */
     'last': string;
-    /**
-    * The middle name
-    */
     'middle': string;
   }
   interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
     'first'?: string;
-    /**
-    * The last name
-    */
     'last'?: string;
-    /**
-    * The middle name
-    */
     'middle'?: string;
+  }
+
+  interface ZprTab {
+    'label': string;
+    'onClick': UIEvent;
+  }
+  interface ZprTabAttributes extends StencilHTMLAttributes {
+    'label'?: string;
+    'onClick'?: UIEvent;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'MyDropdown': Components.MyDropdown;
     'MyComponent': Components.MyComponent;
+    'ZprTab': Components.ZprTab;
   }
 
   interface StencilIntrinsicElements {
+    'my-dropdown': Components.MyDropdownAttributes;
     'my-component': Components.MyComponentAttributes;
+    'zpr-tab': Components.ZprTabAttributes;
   }
 
+
+  interface HTMLMyDropdownElement extends Components.MyDropdown, HTMLStencilElement {}
+  var HTMLMyDropdownElement: {
+    prototype: HTMLMyDropdownElement;
+    new (): HTMLMyDropdownElement;
+  };
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
@@ -58,12 +67,22 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLZprTabElement extends Components.ZprTab, HTMLStencilElement {}
+  var HTMLZprTabElement: {
+    prototype: HTMLZprTabElement;
+    new (): HTMLZprTabElement;
+  };
+
   interface HTMLElementTagNameMap {
+    'my-dropdown': HTMLMyDropdownElement
     'my-component': HTMLMyComponentElement
+    'zpr-tab': HTMLZprTabElement
   }
 
   interface ElementTagNameMap {
+    'my-dropdown': HTMLMyDropdownElement;
     'my-component': HTMLMyComponentElement;
+    'zpr-tab': HTMLZprTabElement;
   }
 
 

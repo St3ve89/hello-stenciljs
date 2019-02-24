@@ -8,19 +8,35 @@
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS">
+  <div>
+    <zpr-button>Button</zpr-button>
+  </div>
+  <div>
+    <zpr-button disabled>Button</zpr-button>
+  </div>
+  <div>
+    <zpr-dropdown title="open me!">
+      <ul>
+        <li>
+          <a href="">blublu</a>
+        </li>
+        <li>
+          <a href="">blabla</a>
+        </li>
+        <li>
+          <a href="">bleble</a>
+        </li>
+      </ul>
+    </zpr-dropdown>
+  </div>
 
-    <p>hello</p>
-  </my-component>
-
-  <my-dropdown title="click me!">
-    <ul>
-      <li>about</li>
-      <li>home</li>
-      <li>anything</li>
-      <li>another anything</li>
-    </ul>
-  </my-dropdown>
-
+  <fancy-tabs background>
+    <a slot="title">Title 1</a>
+    <a slot="title" selected>Title 2</a>
+    <a slot="title">Title 3</a>
+    <section slot="panel">content panel 1</section>
+    <section slot="panel">content panel 2</section>
+    <section slot="panel">content panel 3</section>
+  </fancy-tabs>
 </body>
 </html>

@@ -12,6 +12,13 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface ZprButton {
+    'disabled': boolean;
+  }
+  interface ZprButtonAttributes extends StencilHTMLAttributes {
+    'disabled'?: boolean;
+  }
+
   interface ZprDropdown {
     'title': string;
   }
@@ -44,6 +51,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'ZprButton': Components.ZprButton;
     'ZprDropdown': Components.ZprDropdown;
     'FancyTabs': Components.FancyTabs;
     'ZprTab': Components.ZprTab;
@@ -51,12 +59,19 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'zpr-button': Components.ZprButtonAttributes;
     'zpr-dropdown': Components.ZprDropdownAttributes;
     'fancy-tabs': Components.FancyTabsAttributes;
     'zpr-tab': Components.ZprTabAttributes;
     'zpr-tabs': Components.ZprTabsAttributes;
   }
 
+
+  interface HTMLZprButtonElement extends Components.ZprButton, HTMLStencilElement {}
+  var HTMLZprButtonElement: {
+    prototype: HTMLZprButtonElement;
+    new (): HTMLZprButtonElement;
+  };
 
   interface HTMLZprDropdownElement extends Components.ZprDropdown, HTMLStencilElement {}
   var HTMLZprDropdownElement: {
@@ -83,6 +98,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'zpr-button': HTMLZprButtonElement
     'zpr-dropdown': HTMLZprDropdownElement
     'fancy-tabs': HTMLFancyTabsElement
     'zpr-tab': HTMLZprTabElement
@@ -90,6 +106,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'zpr-button': HTMLZprButtonElement;
     'zpr-dropdown': HTMLZprDropdownElement;
     'fancy-tabs': HTMLFancyTabsElement;
     'zpr-tab': HTMLZprTabElement;

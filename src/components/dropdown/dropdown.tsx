@@ -1,8 +1,8 @@
 import { Component, Prop, State, Event, EventEmitter, Listen } from '@stencil/core';
 
 @Component({
-  tag: 'my-dropdown',
-  styleUrl: 'dropdown.css'
+  tag: 'zpr-dropdown',
+  styleUrl: 'dropdown.scss'
 })
 export class Dropdown {
   @Prop() title: string = '';

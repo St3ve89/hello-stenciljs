@@ -1,4 +1,41 @@
-my-dropdown button {
-  background: none;
-  
+@import '../../styles/variables.scss';
+
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: $font-family;
+  cursor: pointer;
+  border: none;
+  background-color: $blue-steel;
+  color: $white;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  background-color: #fff;
+  color: #86a4ae;
+  border: 0;
+  display: block;
+  margin-top: 8px;
+  padding: 0;
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+  border-radius: 12px;
+  li {
+    font-weight: normal;
+    font-size: 13px;
+    color: #344b60;
+    padding: 10px 15px;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
+  }
 }

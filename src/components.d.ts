@@ -12,13 +12,16 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyDropdown {
+  interface ZprDropdown {
     'title': string;
   }
-  interface MyDropdownAttributes extends StencilHTMLAttributes {
+  interface ZprDropdownAttributes extends StencilHTMLAttributes {
     'onOnToggle'?: (event: CustomEvent) => void;
     'title'?: string;
   }
+
+  interface FancyTabs {}
+  interface FancyTabsAttributes extends StencilHTMLAttributes {}
 
   interface ZprTab {
     'active': boolean;
@@ -41,22 +44,30 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'MyDropdown': Components.MyDropdown;
+    'ZprDropdown': Components.ZprDropdown;
+    'FancyTabs': Components.FancyTabs;
     'ZprTab': Components.ZprTab;
     'ZprTabs': Components.ZprTabs;
   }
 
   interface StencilIntrinsicElements {
-    'my-dropdown': Components.MyDropdownAttributes;
+    'zpr-dropdown': Components.ZprDropdownAttributes;
+    'fancy-tabs': Components.FancyTabsAttributes;
     'zpr-tab': Components.ZprTabAttributes;
     'zpr-tabs': Components.ZprTabsAttributes;
   }
 
 
-  interface HTMLMyDropdownElement extends Components.MyDropdown, HTMLStencilElement {}
-  var HTMLMyDropdownElement: {
-    prototype: HTMLMyDropdownElement;
-    new (): HTMLMyDropdownElement;
+  interface HTMLZprDropdownElement extends Components.ZprDropdown, HTMLStencilElement {}
+  var HTMLZprDropdownElement: {
+    prototype: HTMLZprDropdownElement;
+    new (): HTMLZprDropdownElement;
+  };
+
+  interface HTMLFancyTabsElement extends Components.FancyTabs, HTMLStencilElement {}
+  var HTMLFancyTabsElement: {
+    prototype: HTMLFancyTabsElement;
+    new (): HTMLFancyTabsElement;
   };
 
   interface HTMLZprTabElement extends Components.ZprTab, HTMLStencilElement {}
@@ -72,13 +83,15 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
-    'my-dropdown': HTMLMyDropdownElement
+    'zpr-dropdown': HTMLZprDropdownElement
+    'fancy-tabs': HTMLFancyTabsElement
     'zpr-tab': HTMLZprTabElement
     'zpr-tabs': HTMLZprTabsElement
   }
 
   interface ElementTagNameMap {
-    'my-dropdown': HTMLMyDropdownElement;
+    'zpr-dropdown': HTMLZprDropdownElement;
+    'fancy-tabs': HTMLFancyTabsElement;
     'zpr-tab': HTMLZprTabElement;
     'zpr-tabs': HTMLZprTabsElement;
   }

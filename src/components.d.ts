@@ -30,6 +30,15 @@ export namespace Components {
   interface FancyTabs {}
   interface FancyTabsAttributes extends StencilHTMLAttributes {}
 
+  interface ProgressBar {
+    'max': number;
+    'value': number;
+  }
+  interface ProgressBarAttributes extends StencilHTMLAttributes {
+    'max'?: number;
+    'value'?: number;
+  }
+
   interface ZprTab {
     'active': boolean;
     'disabled': boolean;
@@ -54,6 +63,7 @@ declare global {
     'ZprButton': Components.ZprButton;
     'ZprDropdown': Components.ZprDropdown;
     'FancyTabs': Components.FancyTabs;
+    'ProgressBar': Components.ProgressBar;
     'ZprTab': Components.ZprTab;
     'ZprTabs': Components.ZprTabs;
   }
@@ -62,6 +72,7 @@ declare global {
     'zpr-button': Components.ZprButtonAttributes;
     'zpr-dropdown': Components.ZprDropdownAttributes;
     'fancy-tabs': Components.FancyTabsAttributes;
+    'progress-bar': Components.ProgressBarAttributes;
     'zpr-tab': Components.ZprTabAttributes;
     'zpr-tabs': Components.ZprTabsAttributes;
   }
@@ -85,6 +96,12 @@ declare global {
     new (): HTMLFancyTabsElement;
   };
 
+  interface HTMLProgressBarElement extends Components.ProgressBar, HTMLStencilElement {}
+  var HTMLProgressBarElement: {
+    prototype: HTMLProgressBarElement;
+    new (): HTMLProgressBarElement;
+  };
+
   interface HTMLZprTabElement extends Components.ZprTab, HTMLStencilElement {}
   var HTMLZprTabElement: {
     prototype: HTMLZprTabElement;
@@ -101,6 +118,7 @@ declare global {
     'zpr-button': HTMLZprButtonElement
     'zpr-dropdown': HTMLZprDropdownElement
     'fancy-tabs': HTMLFancyTabsElement
+    'progress-bar': HTMLProgressBarElement
     'zpr-tab': HTMLZprTabElement
     'zpr-tabs': HTMLZprTabsElement
   }
@@ -109,6 +127,7 @@ declare global {
     'zpr-button': HTMLZprButtonElement;
     'zpr-dropdown': HTMLZprDropdownElement;
     'fancy-tabs': HTMLFancyTabsElement;
+    'progress-bar': HTMLProgressBarElement;
     'zpr-tab': HTMLZprTabElement;
     'zpr-tabs': HTMLZprTabsElement;
   }
